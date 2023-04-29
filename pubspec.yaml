@@ -52,6 +52,9 @@ dependencies:
   singleton: ^0.0.3-nullsafety
   velocity_x: ^3.5.1
   shared_preferences: ^2.0.15
+  sentry_flutter: ^6.5.1
+  internet_connection_checker: ^1.0.0+1
+  fluttertoast: ^8.2.1
 
 dev_dependencies:
   flutter_test:
