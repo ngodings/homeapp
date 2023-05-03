@@ -131,20 +131,8 @@ class BlogWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Gap(8.w),
-                  Stack(
-                    children: [
-                      Container(
-                        height: 4.w,
-                        width: big ? 303.w : 234.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.w),
-                          color: Color(0x4C8C8CA1),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Gap(8.w),
+                  // Gap(8.w),
+                  // Gap(8.w),
                 ],
               ),
             ),

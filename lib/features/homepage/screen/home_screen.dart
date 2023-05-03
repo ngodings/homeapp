@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:homeapp/features/homepage/screen/blog_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../utils/colors.dart';
@@ -37,7 +38,7 @@ class _HomeScreen extends HookWidget {
     });
     return Scaffold(
       body: VStack([
-        Gap(30.h),
+        Gap(50.h),
         Expanded(
           child: DefaultTabController(
             length: 2,
@@ -54,6 +55,7 @@ class _HomeScreen extends HookWidget {
                           gradient:
                               selectedIndex.value == 0 ? goldenTwo : greyed,
                           fontWeight: FontWeight.w600,
+                          fontSize: 16.h,
                         ).py4(),
                       ],
                     ),
@@ -62,6 +64,7 @@ class _HomeScreen extends HookWidget {
                         text: "Candidates",
                         gradient: selectedIndex.value == 1 ? goldenTwo : greyed,
                         fontWeight: FontWeight.w600,
+                        fontSize: 16.h,
                       ).py4(),
                     ]),
                   ],
@@ -70,9 +73,7 @@ class _HomeScreen extends HookWidget {
                   child: TabBarView(
                     controller: tabController,
                     children: [
-                      Container(
-                        color: Colors.blue,
-                      ),
+                      const BlogScreen(),
                       Container(
                         color: Colors.green,
                       ),
