@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import '../features/helper/route_not_found_screen.dart';
-import '../features/homepage/home_screen.dart';
+import '../features/homepage/screen/home_screen.dart';
 import '../utils/name_routes.dart';
 
 void configureRoutes() {
