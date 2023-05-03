@@ -5,14 +5,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:homeapp/utils/string.dart';
 import 'package:gap/gap.dart';
 
-class BlogWidget extends StatelessWidget {
-  const BlogWidget({
+import '../models/candidate_model.dart';
+
+class CandidateWidget extends StatelessWidget {
+  const CandidateWidget({
     super.key,
     required this.big,
     required this.data,
   });
   final bool big;
-  final BlogModel data;
+  final CandidateModel data;
 
   @override
   Widget build(BuildContext context) {
@@ -88,17 +90,29 @@ class BlogWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    data.title ?? '',
-                    style:
-                        TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700),
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    children: [
+                      Text(
+                        data.name ?? '',
+                        style: TextStyle(
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xFF008FD7)),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Gap(6.w),
+                      Icon(
+                        Icons.verified,
+                        color: const Color(0xFF008FD7),
+                        size: 14.w,
+                      ),
+                    ],
                   ),
                   Gap(16.w),
                   Row(
                     children: [
                       Text(
-                        'oleh: ',
+                        'Gender : ',
                         style: TextStyle(
                           fontSize: 10.sp,
                           color: const Color(0xFF8C8CA1),
@@ -107,26 +121,11 @@ class BlogWidget extends StatelessWidget {
                       ),
                       Gap(8.w),
                       Text(
-                        data.author ?? '',
+                        data.gender == 'm' ? 'Male' : 'Female' ?? '',
                         style: TextStyle(
                           fontSize: 10.sp,
-                          color: const Color(0xFF008FD7),
+                          color: Colors.black,
                           fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Gap(6.w),
-                      Icon(
-                        Icons.verified,
-                        color: const Color(0xFF008FD7),
-                        size: 10.w,
-                      ),
-                      const Expanded(child: SizedBox()),
-                      Text(
-                        data.tag ?? '',
-                        style: TextStyle(
-                          fontSize: 10.sp,
-                          color: const Color(0xFF8C8CA1),
-                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],

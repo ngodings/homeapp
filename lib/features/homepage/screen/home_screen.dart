@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:homeapp/features/homepage/screen/blog_screen.dart';
+import 'package:homeapp/features/homepage/screen/candidate_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../../../utils/colors.dart';
@@ -72,14 +73,7 @@ class _HomeScreen extends HookWidget {
                 Expanded(
                   child: TabBarView(
                     controller: tabController,
-                    children: [
-                      const BlogScreen(),
-                      Container(
-                        color: Colors.green,
-                      ),
-                      //AddedFromAppTab(),
-                      // PhoneContactTab(),
-                    ],
+                    children: const [BlogScreen(), CandidateScreen()],
                   ),
                 )
               ],
